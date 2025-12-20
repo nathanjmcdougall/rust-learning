@@ -3,3 +3,4 @@
 <https://rust-book.cs.brown.edu/>
 <https://lurklurk.org/effective-rust/preface.html>
 <https://www.maturin.rs/index.html>
+<https://doc.rust-lang.org/cargo/reference/semver.html>
