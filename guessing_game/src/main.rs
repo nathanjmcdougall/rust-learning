@@ -31,9 +31,6 @@ fn main() {
         //
         .gen_range(1..=100);
 
-    // Temporary for dev
-    println!("The secret number is: {secret_number}");
-
     loop {
         println!("Please input your guess");
 
@@ -84,7 +81,7 @@ fn main() {
 
         // We can change the type associated with a variable. This is called "shadowing".
         // `guess` was originally a String, but will now be u32.
-        let guess: u32 = guess
+        let guess: u32 = match guess
             .trim() // a method on String values that removes whitespace. There will
             // always be a newline at the end of the input from stdin, representing when
             // the user pressed Enter to submit their input.
@@ -100,7 +97,16 @@ fn main() {
             // Finally, as before, we need to handle the Err case (again this is better done
             // with proper error handling rather than crashing, but we're keeping it simple
             // for now).
-            .expect("Please type a number!");
+            {
+                // Similar to match-case in Python, there is structural pattern matching
+                // here.
+                Ok(num) => num,
+                // The underscore convention is just like Python too - it means, I don't
+                // care about this value. And the underscore prefix can be used to give
+                // it a more descriptive name while still indicating we don't care
+                // about it.
+                Err(_) => continue,
+            };
 
         println!("You guessed: {guess}"); // N.B. string literals are like Python f-strings
         // by default you can also do this with positional arguments like so:
