@@ -72,7 +72,7 @@ fn main() {
         // not to simply crash, but we're keeping it simple for now.
         .expect("Failed to read line");
 
-    println!("You guessed: {guess}") // N.B. string literals are like Python f-strings by default
-    // you can also do this with positional arguments like so:
+    println!("You guessed: {guess}"); // N.B. string literals are like Python f-strings
+    // by default you can also do this with positional arguments like so:
     // println!("You guessed: {}", guess);
 }
