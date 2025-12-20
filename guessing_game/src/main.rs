@@ -1,11 +1,33 @@
 // You can install the rust-analyzer extension in VS Code to get linting and formatting
 // The rust-analyzer in VS Code will annotate variables with their types in grey
 
+use rand::Rng; // N.B. Rng is a trait
 use std::io; // namespace access is with :: and imports are with the `use` keyword
 
 // Curly braces and semicolons everywhere :)
 fn main() {
     println!("Guess the number!");
+
+    let secret_number = 
+        // rand::thread_rng() returns a handle (like io::stdin()). 
+        rand::thread_rng() 
+        // And then since use used the Rng trait above, we can call gen_range on the
+        // handle. This is quite different to Python where methods are tightly bound
+        // to the types/classes they are defined on. Instead, here in Rust we opt-in
+        // specifically to get the methods we want to use by "using" the relevant
+        // traits.
+        //
+        // In this sense, "using" a trait is more similar in spirit to Python's mixins,
+        // or even monkey-patching.
+        //
+        // In VS Code, you can go-to definition on gen_range to see that it is defined
+        // in the Rng trait. It is also formatted with an underline, indicating it is
+        // provided via a trait.
+        //
+        .gen_range(1..=100);
+
+    // Temporary for dev
+    println!("The secret number is: {secret_number}");
 
     println!("Please input your guess");
 
