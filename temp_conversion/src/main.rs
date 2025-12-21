@@ -48,7 +48,7 @@ fn get_conversion_mode_from_user() -> ConversionMode {
         println!("(F) : {}", ConversionMode::CtoF.describe());
         let mut mode_choice = String::new();
         match io::stdin().read_line(&mut mode_choice) {
-            Ok(mode_choice) => (),
+            Ok(_) => (),
             Err(_) => {
                 _request_new_mode_choice();
                 continue;
@@ -84,7 +84,7 @@ fn get_value_to_convert_from_user(mode: &ConversionMode) -> f64 {
         println!("Please enter a value in {input_unit}:");
         let mut val_choice = String::new();
         match io::stdin().read_line(&mut val_choice) {
-            Ok(val_choice) => (),
+            Ok(_) => (),
             Err(_) => {
                 _request_new_val_choice(&mode);
                 continue;
