@@ -125,7 +125,3 @@ fn main() {
         };
     };
 }
-
-// N.B. the final line in a block does not need a semicolon; this is an implicit return
-// But it's probably a good idea to do so, to avoid single-character diffs in subsequent
-// edits.
