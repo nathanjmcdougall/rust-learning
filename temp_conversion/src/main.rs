@@ -54,20 +54,19 @@ fn get_conversion_mode_from_user() -> ConversionMode {
                 continue;
             }
         };
-        let mode_str: char = match mode_choice.to_string().trim().parse() {
-            Ok(mode_str) => mode_str,
-            Err(_) => {
+        if mode_choice.trim().len() != 1 {
+            request_new_mode_choice();
+            continue;
+        };
+        mode = match mode_choice.to_uppercase().chars().next() {
+            // Use of `Some` for literal matching
+            Some('C') => ConversionMode::FtoC,
+            Some('F') => ConversionMode::CtoF,
+            // N.B. use underscore to match all other patterns
+            _ => {
                 request_new_mode_choice();
                 continue;
             }
-        };
-        mode = if mode_str == 'C' {
-            ConversionMode::FtoC
-        } else if mode_str == 'F' {
-            ConversionMode::CtoF
-        } else {
-            request_new_mode_choice();
-            continue;
         };
 
         return mode;
