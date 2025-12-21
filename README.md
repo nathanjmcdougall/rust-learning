@@ -14,3 +14,4 @@ The [`REFERENCE.md`](REFERENCE.md) file contains a quick list of the reference m
 - [Hello World using Cargo](./hello_cargo/)
 - [Guessing Game](./guessing_game/)
 - [Variables](./variables/)
+- [Functions](./functions/)
