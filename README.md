@@ -15,3 +15,4 @@ The [`REFERENCE.md`](REFERENCE.md) file contains a quick list of the reference m
 - [Guessing Game](./guessing_game/)
 - [Variables](./variables/)
 - [Functions](./functions/)
+- [Loops](./loops/)
