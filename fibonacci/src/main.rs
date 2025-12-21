@@ -26,7 +26,7 @@ fn main() {
                 continue;
             }
         };
-        if (n == 0) || (n >= MAX_N) {
+        if !(1..MAX_N).contains(&n) {
             request_new_choice();
             continue;
         }
