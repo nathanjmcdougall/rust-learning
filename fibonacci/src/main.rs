@@ -53,18 +53,11 @@ fn request_new_choice() {
 }
 
 fn fibonacci(k: u64) -> u64 {
-    let mut f = 0; // f(i)
-    let mut f1 = 0; // f(i-1)
-    let mut f2 = 0; // f(i-2)
-    for _ in 0..k {
-        f2 = match f2 {
-            _ => f1,
-        };
-        f1 = match f1 {
-            0 => 1,
-            _ => f,
-        };
-        f = f1 + f2;
+    let (mut f, mut fminus1) = (0, 1); // f(i), f(i-1)
+    for _ in 1..k {
+        let fplus1 = f + fminus1; // f(i+1)
+        fminus1 = f;
+        f = fplus1;
     }
     f
 }
