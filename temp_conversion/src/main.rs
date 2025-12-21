@@ -50,14 +50,14 @@ fn get_conversion_mode_from_user() -> ConversionMode {
         match io::stdin().read_line(&mut mode_choice) {
             Ok(_) => (),
             Err(_) => {
-                _request_new_mode_choice();
+                request_new_mode_choice();
                 continue;
             }
         };
         let mode_str: char = match mode_choice.to_string().trim().parse() {
             Ok(mode_str) => mode_str,
             Err(_) => {
-                _request_new_mode_choice();
+                request_new_mode_choice();
                 continue;
             }
         };
@@ -66,14 +66,14 @@ fn get_conversion_mode_from_user() -> ConversionMode {
         } else if mode_str == 'F' {
             ConversionMode::CtoF
         } else {
-            _request_new_mode_choice();
+            request_new_mode_choice();
             continue;
         };
 
         return mode;
     }
 }
-fn _request_new_mode_choice() {
+fn request_new_mode_choice() {
     println!("Invalid choice, please try again. Choose either C or F.");
 }
 
@@ -86,14 +86,14 @@ fn get_value_to_convert_from_user(mode: &ConversionMode) -> f64 {
         match io::stdin().read_line(&mut val_choice) {
             Ok(_) => (),
             Err(_) => {
-                _request_new_val_choice(&mode);
+                request_new_val_choice(&mode);
                 continue;
             }
         };
         val = match val_choice.to_string().trim().parse() {
             Ok(val) => val,
             Err(_) => {
-                _request_new_val_choice(&mode);
+                request_new_val_choice(&mode);
                 continue;
             }
         };
@@ -101,7 +101,7 @@ fn get_value_to_convert_from_user(mode: &ConversionMode) -> f64 {
         return val;
     }
 }
-fn _request_new_val_choice(mode: &ConversionMode) {
+fn request_new_val_choice(mode: &ConversionMode) {
     println!(
         "Invalid choice, please try again. Choose a number in {}.",
         mode.input_unit()
