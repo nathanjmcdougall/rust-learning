@@ -98,9 +98,8 @@ fn main() {
         let guess: u32 = match guess
             .trim() // a method on String values that removes whitespace.
             /*
-            There will
-            always be a newline at the end of the input from stdin, representing when
-            the user pressed Enter to submit their input.
+            There will always be a newline at the end of the input from stdin,
+            representing when the user pressed Enter to submit their input.
             
             Incidentally, in Rust, we don't call them String "instances" like in Python,
             but rather "values". We do call "methods" the same way though.
