@@ -37,11 +37,14 @@ fn main() {
     let fib = fibonacci(n);
     // .next() and .next_back() to access the first and last char of a double-ended
     // iterator trait
-    let ord_suffix = match n_str.chars().next_back() {
-        Some('1') => "st",
-        Some('2') => "nd",
-        Some('3') => "rd",
-        _ => "th",
+    let ord_suffix = match n_str {
+        s if s.ends_with("11") || s.ends_with("12") || s.ends_with("13") => "th",
+        _ => match n_str.chars().next_back() {
+            Some('1') => "st",
+            Some('2') => "nd",
+            Some('3') => "rd",
+            _ => "th",
+        },
     };
     println!("The {n}{ord_suffix} Fibonacci number is: {fib}");
 }
