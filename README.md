@@ -18,3 +18,4 @@ The [`REFERENCE.md`](REFERENCE.md) file contains a quick list of the reference m
 - [Loops](./loops/)
 - [Temperature Conversion](./temp_conversion/)
 - [Fibonacci Sequence](./fibonacci/)
+- [The Twelve Days of Christmas](./twelve_days/)
