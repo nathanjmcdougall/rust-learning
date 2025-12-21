@@ -33,11 +33,11 @@ fn main() {
 }
 
 fn fahrenheit_to_celsius(degrees_f: f64) -> f64 {
-    (degrees_f * (9.0 / 5.0)) + 32.0
+    (degrees_f - 32.0) / (9.0 / 5.0)
 }
 
 fn celsius_to_fahrenheit(degrees_c: f64) -> f64 {
-    (degrees_c - 32.0) / (9.0 / 5.0)
+    (degrees_c * (9.0 / 5.0)) + 32.0
 }
 
 fn get_conversion_mode_from_user() -> ConversionMode {
