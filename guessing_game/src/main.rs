@@ -33,8 +33,7 @@ fn main() {
         or even monkey-patching.
         
         In VS Code, you can go-to definition on gen_range to see that it is defined
-        in the Rng trait. It is also formatted with an underline, indicating it is
-        provided via a trait.
+        in the Rng trait.
         */
         .gen_range(1..=100);
 
