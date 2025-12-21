@@ -17,3 +17,4 @@ The [`REFERENCE.md`](REFERENCE.md) file contains a quick list of the reference m
 - [Functions](./functions/)
 - [Loops](./loops/)
 - [Temperature Conversion](./temp_conversion/)
+- [Fibonacci Sequence](./fibonacci/)
