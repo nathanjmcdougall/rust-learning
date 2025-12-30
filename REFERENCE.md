@@ -6,6 +6,7 @@
 - _Effective Rust_: <https://lurklurk.org/effective-rust/preface.html>
 - Semantic Versioning Docs: <https://doc.rust-lang.org/cargo/reference/semver.html>
 - _Rust By Practice_: <https://practice.course.rs/>
+- Undefined Behaviour Docs: <https://doc.rust-lang.org/reference/behavior-considered-undefined.html>
 
 ## Rust and Python Interoperability
 
