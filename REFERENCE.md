@@ -7,6 +7,7 @@
 - Semantic Versioning Docs: <https://doc.rust-lang.org/cargo/reference/semver.html>
 - _Rust By Practice_: <https://practice.course.rs/>
 - Undefined Behaviour Docs: <https://doc.rust-lang.org/reference/behavior-considered-undefined.html>
+- Microsoft Rust Learning Resources: <https://github.com/microsoft/RustTraining>
 
 ## Rust and Python Interoperability
 
